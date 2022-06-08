@@ -1,0 +1,22 @@
+
+    <form [formGroup]="myForm" (ngSubmit)="registrarse()">
+    <div>
+        <label>Nombre</label>
+        <input type="text" formControlName="nombre" [ngClass]="{error:myForm.get('nombre')?.hasError('required') && myForm.get('nombre')?.dirty,warning:myForm.get('nombre')?.hasError('minlength') && myForm.get('nombre')?.dirty}">
+    </div>
+    <div *ngIf="myForm.get('correo')?.errors && myForm.get('name')?.dirty">
+        <p *ngIf="myForm.get('nombre')?.hasError('required')">El campo es obligatorio</p>
+        <p *ngIf="myForm.get('nombre')?.hasError('minlength')">poco tamaño</p>
+    </div>
+    <div>
+        <label>Correo</label>
+        <input type="text" formControlName="correo">
+    </div>
+    <div *ngIf="myForm.get('correo')?.errors && myForm.get('correo')?.dirty">El campo es obligatorio</div>
+    <div>
+        <label>Contraseña</label>
+        <input type="text" formControlName="clave">
+    </div>
+    <button type="submit" [disabled]="myForm.invalid">Registrate</button>
+    <button type="submit" [disabled]="myForm.invalid">Registrarse</button>
+</form>

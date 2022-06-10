@@ -25,7 +25,10 @@
         <label>Correo</label>
         <input type="text" formControlName="email">
     </div>
-    <div *ngIf="myForm.get('email')?.errors && myForm.get('email')?.dirty">El campo es obligatorio</div>
+    <div *ngIf="myForm.get('email')?.errors && myForm.get('email')?.dirty">
+        <p *ngIf="myForm.get('email')?.hasError('required')">Complete este campo</p>
+        <p *ngIf="myForm.get('email')?.hasError('email')">Escriba un email válido</p>
+    </div>
     <div>
         <label>Contraseña</label>
         <input type="password" formControlName="password">

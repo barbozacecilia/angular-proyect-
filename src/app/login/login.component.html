@@ -1,1 +1,20 @@
-<p>login works!</p>
+<div>
+<h2>Login</h2>
+<form [formGroup]="myFormLogin" (ngSubmit)="login()">
+    <div>
+        <label>Email</label>
+        <input type="email" formControlName="email">
+    </div>
+    <div *ngIf="myFormLogin.get('email')?.errors && myFormLogin.get('email')?.dirty">
+        <p *ngIf="myFormLogin.get('email')?.hasError('required')">El campo es obligatorio</p>
+    </div>
+    <div>
+        <label>Contraseña</label>
+        <input type="password" formControlName="password">
+    </div>
+    <div *ngIf="myFormLogin.get('password')?.errors && myFormLogin.get('password')?.dirty">
+        <p *ngIf="myFormLogin.get('password')?.hasError('required')">El campo es obligatorio</p>
+    </div>
+    <button type="submit">Iniciar sesión</button>
+</form>
+</div>

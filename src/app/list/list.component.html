@@ -1,1 +1,6 @@
-<p>list works!</p>
+<div>
+<h2>Catalogo</h2>
+<p>Lista de productos</p>
+<div *ngFor="let product of products">{{product.name}}</div>
+<button (click)="promo()">Ver productos destacados</button>
+</div>

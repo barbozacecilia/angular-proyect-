@@ -13,16 +13,16 @@ myForm:FormGroup
     private fb:FormBuilder
   ) {
     this.myForm =this.fb.group({
-      nombre:["",[Validators.required,Validators.minLength(2), Validators.pattern]],
-      correo:["",[Validators.required, Validators.email]],
-      clave:["",[Validators.minLength(6)]]
+      firstName:["",[Validators.required,Validators.minLength(2), Validators.pattern]],
+      lastName:["",[Validators.required,Validators.minLength(2), Validators.pattern]],
+      phone:[""],
+      email:["",[Validators.required, Validators.email]],
+      password:["",[Validators.minLength(6), Validators.maxLength(10), Validators.pattern]]
     })
    }
-
    registrarse(){
      console.log(this.myForm.value)
    }
-
   ngOnInit(): void {
   }
 

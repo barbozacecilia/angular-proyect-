@@ -1,22 +1,40 @@
-
+<div>
+<h2>Registro</h2>
     <form [formGroup]="myForm" (ngSubmit)="registrarse()">
     <div>
         <label>Nombre</label>
-        <input type="text" formControlName="nombre" [ngClass]="{error:myForm.get('nombre')?.hasError('required') && myForm.get('nombre')?.dirty,warning:myForm.get('nombre')?.hasError('minlength') && myForm.get('nombre')?.dirty}">
+        <input type="text" formControlName="firstName" [ngClass]="{error:myForm.get('firstName')?.hasError('required') && myForm.get('firstName')?.dirty,warning:myForm.get('firstName')?.hasError('minlength') && myForm.get('firstName')?.dirty}">
     </div>
-    <div *ngIf="myForm.get('correo')?.errors && myForm.get('name')?.dirty">
-        <p *ngIf="myForm.get('nombre')?.hasError('required')">El campo es obligatorio</p>
-        <p *ngIf="myForm.get('nombre')?.hasError('minlength')">poco tamaño</p>
+    <div *ngIf="myForm.get('email')?.errors && myForm.get('firstName')?.dirty">
+        <p *ngIf="myForm.get('firstName')?.hasError('required')">El campo es obligatorio</p>
+        <p *ngIf="myForm.get('firstName')?.hasError('minlength')">El valor mínimo ingresado no debe ser menor a 2 caracteres</p>
+    </div>
+    <div>
+        <label>Apellido</label>
+        <input type="text" formControlName="lastName" [ngClass]="{error:myForm.get('lastName')?.hasError('required') && myForm.get('lastName')?.dirty,warning:myForm.get('lastName')?.hasError('minlength') && myForm.get('lastName')?.dirty}">
+    </div>
+    <div *ngIf="myForm.get('email')?.errors && myForm.get('lastName')?.dirty">
+        <p *ngIf="myForm.get('lastName')?.hasError('required')">El campo es obligatorio</p>
+        <p *ngIf="myForm.get('lastName')?.hasError('minlength')">poco tamaño</p>
+    </div>
+    <div>
+        <label>Teléfono</label>
+        <input type="number" formControlName="phone">
     </div>
     <div>
         <label>Correo</label>
-        <input type="text" formControlName="correo">
+        <input type="text" formControlName="email">
     </div>
-    <div *ngIf="myForm.get('correo')?.errors && myForm.get('correo')?.dirty">El campo es obligatorio</div>
+    <div *ngIf="myForm.get('email')?.errors && myForm.get('email')?.dirty">El campo es obligatorio</div>
     <div>
         <label>Contraseña</label>
-        <input type="text" formControlName="clave">
+        <input type="password" formControlName="password">
+    </div>
+    <div *ngIf="myForm.get('password')?.errors && myForm.get('password')?.dirty">
+        <p *ngIf="myForm.get('password')?.hasError('required')">El campo es obligatorio</p>
+        <p *ngIf="myForm.get('password')?.hasError('minlength')">El valor mínimo ingresado no debe ser menor a 6 caracteres</p>
+        <p *ngIf="myForm.get('password')?.hasError('maxlength')">El valor máximo ingresado no debe ser major a 10 caracteres</p>
     </div>
     <button type="submit" [disabled]="myForm.invalid">Registrate</button>
-    <button type="submit" [disabled]="myForm.invalid">Registrarse</button>
 </form>
+</div>

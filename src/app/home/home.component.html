@@ -1,1 +1,6 @@
 <p>Home</p>
+
+<div *ngFor="let product of products">
+    <p>{{product.title}}</p>
+    <p>$ {{product.price}}</p>
+</div>

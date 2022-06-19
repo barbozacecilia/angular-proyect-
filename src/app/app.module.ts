@@ -9,6 +9,7 @@ import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { DetailComponent } from './detail/detail.component';
 import { ListComponent } from './list/list.component';
+import {HttpClientModule} from '@angular/common/http';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { ListComponent } from './list/list.component';
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

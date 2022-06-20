@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { lastValueFrom, map } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -10,16 +11,12 @@ export class ProductsService {
     private httpClient: HttpClient
   ) {}
   getAllProducts(){
-    return this.httpClient.get("https://api.mercadolibre.com/sites/MLA/search?q=iphone")
+    return this.httpClient.get("https://api.mercadolibre.com/sites/MLA/search?q=iphone").pipe(map((value:any)=>value["results"]))
   }
-create(body:any){
-  return this.httpClient.post("https://api.mercadolibre.com/sites/MLA/search?q=iphone",body)
-}
-update(body:any){
-  return this.httpClient.put("https://api.mercadolibre.com/sites/MLA/search?q=iphone",body)
-}
-delete(){
-  return this.httpClient.delete("https://api.mercadolibre.com/sites/MLA/search?q=iphone")
-}
-
+  getAllProductsPromise(){
+    return lastValueFrom(this.httpClient.get("https://api.mercadolibre.com/sites/MLA/search?q=iphone"))
+  }
+  getAllProductsProm(){
+    return lastValueFrom(this.httpClient.get("https://api.mercadolibre.com/sites/MLA/search?q=iphone").pipe(map((value:any)=>value["results"])))
+  }
 }

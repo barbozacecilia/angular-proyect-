@@ -13,9 +13,6 @@ export class ProductsService {
   getAllProducts(){
     return this.httpClient.get("https://api.mercadolibre.com/sites/MLA/search?q=iphone").pipe(map((value:any)=>value["results"]))
   }
-  getAllProductsPromise(){
-    return lastValueFrom(this.httpClient.get("https://api.mercadolibre.com/sites/MLA/search?q=telescopio"))
-  }
   getAllProductsProm(){
     return lastValueFrom(this.httpClient.get("https://api.mercadolibre.com/sites/MLA/search?q=telescopio").pipe(map((value:any)=>value["results"])))
   }

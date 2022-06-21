@@ -1,0 +1,19 @@
+.body{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    background-color:f8f8f8;
+}
+
+.picture{
+    height: 10px;
+}
+
+.explanation{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 800px;
+    padding: 25px;
+}

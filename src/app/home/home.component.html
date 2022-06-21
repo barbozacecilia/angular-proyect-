@@ -1,13 +1,16 @@
+<div class="body">
 <p>Home</p>
+<img src="./assets/img/img_telescope.png" width="10%">
 <p>Astronomy Picture of the Day</p>
 <h1>{{picture.title}}</h1>
-<p>{{picture.date}}</p>
+<p class="picture">{{picture.date}}</p>
 <img src={{picture.url}}/>
-<p>{{picture.explanation}}</p>
-<h2>Promise</h2>
-<div *ngFor="let product of pProducts | async">
-    <p>{{product.title | uppercase}}</p>
-    <p>{{product.price | currency:'ARS ' }}</p>
+    <p class="explanation">{{picture.explanation}}</p>
+<h2>Los mejores telescopios</h2>
+    <div *ngFor="let product of pProducts | async">
+        <p>{{product.title | uppercase}}</p>
+     <p>{{product.price | currency:'ARS ' }}</p>
+    </div>
 </div>
 
 <!--

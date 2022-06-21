@@ -10,7 +10,9 @@ export class HomeComponent implements OnInit {
   products:any=[]
   productsAsync:any=[]
   pProducts:any=[]
-
+  picture:any=[]
+  asteroids:any=[]
+  
   constructor(
     private productsService: ProductsService
   ) { 
@@ -25,25 +27,25 @@ export class HomeComponent implements OnInit {
       }}
     )*/
 
-    /*this.productsService.getAllProductsPromise()
+    /*this.productsService.getPicture()
     .then(data=>{
-      console.log("data",data)
-    })
+      console.log("data ",data)
+    })*/
    
-    this.init()*/
+    this.init()
 
     this.pProducts = this.productsService.getAllProductsProm()
+
   }
-  /*async init(){
+  async init(){
     try{
-      const results:any = await this.productsService.getAllProductsProm()
-      this.productsAsync = results
+      const results:any = await this.productsService.getPicture()
+      this.picture = results
       console.log("results ", results)
     }catch(e){
       console.log(e)
     }
-  }*/
-
+  }
 
   ngOnInit(): void {
   }

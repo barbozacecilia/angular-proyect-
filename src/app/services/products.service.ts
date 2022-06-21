@@ -14,9 +14,12 @@ export class ProductsService {
     return this.httpClient.get("https://api.mercadolibre.com/sites/MLA/search?q=iphone").pipe(map((value:any)=>value["results"]))
   }
   getAllProductsPromise(){
-    return lastValueFrom(this.httpClient.get("https://api.mercadolibre.com/sites/MLA/search?q=iphone"))
+    return lastValueFrom(this.httpClient.get("https://api.mercadolibre.com/sites/MLA/search?q=telescopio"))
   }
   getAllProductsProm(){
-    return lastValueFrom(this.httpClient.get("https://api.mercadolibre.com/sites/MLA/search?q=iphone").pipe(map((value:any)=>value["results"])))
+    return lastValueFrom(this.httpClient.get("https://api.mercadolibre.com/sites/MLA/search?q=telescopio").pipe(map((value:any)=>value["results"])))
+  }
+  getPicture(){
+    return lastValueFrom(this.httpClient.get("https://api.nasa.gov/planetary/apod?api_key=8cxzRvH8CXbIOfw9yT89gzz2fVvxswtdbA6nChUf"))
   }
 }

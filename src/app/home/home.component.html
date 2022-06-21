@@ -1,5 +1,9 @@
 <p>Home</p>
-
+<p>Astronomy Picture of the Day</p>
+<h1>{{picture.title}}</h1>
+<p>{{picture.date}}</p>
+<img src={{picture.url}}/>
+<p>{{picture.explanation}}</p>
 <h2>Promise</h2>
 <div *ngFor="let product of pProducts | async">
     <p>{{product.title | uppercase}}</p>

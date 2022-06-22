@@ -1,0 +1,8 @@
+<p>Detalle</p>
+<div *ngIf="!isLoading"> 
+       Loading
+</div>
+<div *ngIf="!isLoading && !isError">
+    <h1>{{product.title}}</h1>
+    <p>${{product.price}}</p>
+</div>

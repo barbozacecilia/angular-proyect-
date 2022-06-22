@@ -19,4 +19,7 @@ export class ProductsService {
   getPicture(){
     return lastValueFrom(this.httpClient.get("https://api.nasa.gov/planetary/apod?api_key=8cxzRvH8CXbIOfw9yT89gzz2fVvxswtdbA6nChUf"))
   }
+  getById(id:any){
+    return lastValueFrom(this.httpClient.get(("https://api.mercadolibre.com/sites/MLA/search?q=telescopio")+id))
+  }
 }

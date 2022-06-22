@@ -10,6 +10,7 @@
     <div *ngFor="let product of pProducts | async">
         <p>{{product.title | uppercase}}</p>
      <p>{{product.price | currency:'ARS ' }}</p>
+     <button routerLink="/product/{{product.id}}"></button>
     </div>
 </div>
 

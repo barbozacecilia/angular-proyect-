@@ -8,9 +8,9 @@ import { ProductsService } from '../../services/products.service';
   styleUrls: ['./detail.component.css']
 })
 export class DetailComponent implements OnInit {
-product:any
-isLoading:boolean=true
-isError:boolean | string =false
+product:any;
+isLoading:boolean=true;
+isError:boolean | string =false;
   constructor(
     private activatedRouter: ActivatedRoute,
     private productsService: ProductsService,
@@ -18,14 +18,17 @@ isError:boolean | string =false
     const id = this.activatedRouter.snapshot.paramMap.get("id")
     console.log("id ", id)
     this.productsService.getById(id)
-
     .then(data=>{
       this.product=data
       this.isError=false
     })
-    .catch(e=>{console.log(e)
-    this.isError=true})
-    .finally(()=>{this.isLoading=true})
+    .catch(e=>{
+      console.log(e)
+      this.isError=true
+    })
+    .finally(
+      ()=>{this.isLoading=false}
+      )
    }
   
 

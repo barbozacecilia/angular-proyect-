@@ -1,8 +1,8 @@
 <p>Detalle</p>
-<div *ngIf="!isLoading"> 
-       Loading
+<div *ngIf="isLoading"> 
+    is Loading ... 
 </div>
 <div *ngIf="!isLoading && !isError">
-    <h1>{{product.title}}</h1>
-    <p>${{product.price}}</p>
+ <h1>{{product?.title}}</h1>
+ <p>{{product?.price | currency:'ARS ' }}</p>
 </div>

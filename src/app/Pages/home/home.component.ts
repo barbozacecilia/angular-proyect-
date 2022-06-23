@@ -12,6 +12,8 @@ export class HomeComponent implements OnInit {
   pProducts:any=[]
   picture:any=[]
   asteroids:any=[]
+  isLoading:boolean=true;
+  isError:boolean | string =false;
   
   constructor(
     private productsService: ProductsService
@@ -42,8 +44,11 @@ export class HomeComponent implements OnInit {
       const results:any = await this.productsService.getPicture()
       this.picture = results
       console.log("results ", results)
+      this.isError=false
+      this.isLoading=false
     }catch(e){
       console.log(e)
+      this.isError=true
     }
   }
 

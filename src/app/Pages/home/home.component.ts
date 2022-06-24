@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductsService } from '../../services/products.service';
+import {Product} from 'src/interfaces/ProductsML';
+import { Apod } from 'src/interfaces/Apod';
 
 @Component({
   selector: 'app-home',
@@ -7,43 +9,40 @@ import { ProductsService } from '../../services/products.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  products:any=[]
-  productsAsync:any=[]
-  pProducts:any=[]
-  picture:any=[]
-  asteroids:any=[]
-  isLoading:boolean=true;
-  isError:boolean | string =false;
+  products: Product[]=[];
+  isLoading: boolean=true;
+  isError: boolean | string =false;
+  results: Apod | null = null;
   
   constructor(
     private productsService: ProductsService
   ) { 
-  /*this.productsService.getAllProducts()
-    .subscribe({
-      next:(data:any)=>{
-        console.log(data);
-        this.products=data
-      },
-      error:(error:any)=>{
-        console.log(error)
-      }}
-    )*/
+     /* this.productsService.getAllProducts()
+      .subscribe({
+        next:(data:Product[])=>{
+          console.log(data);
+          this.products=data
+        },
+        error:(error:Product[])=>{
+          console.log(error)
+        }}
+      )*/
 
-    /*this.productsService.getPicture()
-    .then(data=>{
+    this.productsService.getAllProductsProm()
+    .then((data:Product[])=>{
+      this.products=data
       console.log("data ",data)
-    })*/
+    })
    
     this.init()
 
-    this.pProducts = this.productsService.getAllProductsProm()
+    /*this.pProducts = this.productsService.getAllProductsProm()*/
 
   }
   async init(){
     try{
-      const results:any = await this.productsService.getPicture()
-      this.picture = results
-      console.log("results ", results)
+      this.results = await this.productsService.getPicture() 
+      console.log("results ", this.results)
       this.isError=false
       this.isLoading=false
     }catch(e){

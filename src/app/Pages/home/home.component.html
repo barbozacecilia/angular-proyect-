@@ -6,19 +6,21 @@
 </div>
 <div class="body">
     <div *ngIf="!isLoading && !isError">
-        <img src="./assets/img/img_telescope.png" width="10%">
-        <p>Astronomy Picture of the Day</p>
-        <h1>{{picture?.title}}</h1>
-        <p class="picture">{{picture?.date}}</p>
-        <img src={{picture.url}}/>
-        <p class="explanation">{{picture?.explanation}}</p>
+        <div>
+            <img src="./assets/img/img_telescope.png" width="10%">
+            <p>Astronomy Picture of the Day</p>
+            <h1>{{results?.title}}</h1>
+            <p class="picture">{{results?.date}}</p>
+            <img src={{results?.url}}/>
+            <p class="explanation">{{results?.explanation}}</p>
+        </div>
         <h2>Los mejores telescopios</h2>
-            <div *ngFor="let product of pProducts | async">
-                <p>{{product?.title | uppercase}}</p>
+        <div *ngFor="let product of products">
+            <p>{{product?.title | uppercase}}</p>
             <p>{{product?.price | currency:'ARS ' }}</p>
             <button routerLink="/telescope/{{product.id}}">ver detalle</button>
-            </div>
         </div>
+    </div>
 </div>
 
 <!--

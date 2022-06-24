@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-login',
@@ -8,9 +9,11 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
 //private fb:FormBuilder = new FormBuilder()
-myFormLogin:FormGroup
+myFormLogin:FormGroup;
+loading = false;
   constructor(
-    private fb:FormBuilder
+    private fb:FormBuilder,
+    private _snackBar: MatSnackBar
   ) { 
     this.myFormLogin = this.fb.group({
       email:["", [Validators.required, Validators.email]],
@@ -19,6 +22,39 @@ myFormLogin:FormGroup
   }
   login(){
     console.log(this.myFormLogin.value)
+    const email = this.myFormLogin.value. email;
+    const password = this.myFormLogin.value.password;
+
+    console.log(email)
+    console.log(password)
+
+    if(email == 'test@test.com' && password == '1234567' ){
+      this.setLoading();
+    } else{
+      this.error();
+      this.myFormLogin.reset();
+    }
+  }
+
+  error(){
+    this._snackBar.open('Usuario o contraseña ingresados no son válidos', '', {
+      duration: 5000,
+      horizontalPosition: 'center',
+      verticalPosition: 'bottom',
+    });
+  }
+
+  setLoading(){
+    this.loading = true;
+    this._snackBar.open('Ingresando...', '', {
+      duration: 3000,
+      horizontalPosition: 'center',
+      verticalPosition: 'bottom',
+    });
+    setTimeout(()=>{
+      this.loading = false;
+    }, 3000)
+
   }
 
   ngOnInit(): void {

@@ -1,28 +1,31 @@
 <div class="body">
-<div class="login">
-<h2>Login</h2>
-<div>
-        <img src="./assets/img/user.png" width="30%">
-    </div>
-    <form [formGroup]="myFormLogin" (ngSubmit)="login()">
-        <mat-form-field class="input-login" appearance="fill">
-            <mat-label>Email</mat-label>
-            <input matInput type="email" formControlName="email">
-        </mat-form-field>
-    <div *ngIf="myFormLogin.get('email')?.errors && myFormLogin.get('email')?.dirty">
-        <p *ngIf="myFormLogin.get('email')?.hasError('required')">El campo es obligatorio</p>
-        <p *ngIf="myFormLogin.get('email')?.hasError('email')"> Escriba un email válido</p>
-    </div>
-    <mat-form-field class="input-login" appearance="fill">
-        <mat-label>Contraseña</mat-label>
-        <input matInput type="password" formControlName="password">
-    </mat-form-field>
-    <div *ngIf="myFormLogin.get('password')?.errors && myFormLogin.get('password')?.dirty">
-        <p *ngIf="myFormLogin.get('password')?.hasError('required')">El campo es obligatorio</p>
-        <p *ngIf="myFormLogin.get('password')?.hasError('minlength')">Debe tener por lo menos 6 caracteres</p>
-        <p *ngIf="myFormLogin.get('password')?.hasError('maxlength')">Debe como máximo 10 caracteres</p>
-    </div>
-    <button mat-raised-button class="button-login" color="primary"type="submit" [disabled]="myFormLogin.invalid">Iniciar sesión</button>
-    </form>
-    </div>
-    </div>
+    <div class="login">
+        <mat-spinner *ngIf="loading" diameter="50" class="spiner"></mat-spinner>
+        <div *ngIf="!loading">
+        <h2>Login</h2>
+        <div>
+            <img src="./assets/img/user.png" width="30%">
+        </div>
+        <form  [formGroup]="myFormLogin" (ngSubmit)="login()">
+            <mat-form-field class="input-login" appearance="fill">
+                <mat-label>Email</mat-label>
+                <input matInput type="email" formControlName="email">
+            </mat-form-field>
+            <div *ngIf="myFormLogin.get('email')?.errors && myFormLogin.get('email')?.dirty">
+                <p *ngIf="myFormLogin.get('email')?.hasError('required')">El campo es obligatorio</p>
+                <p *ngIf="myFormLogin.get('email')?.hasError('email')"> Escriba un email válido</p>
+            </div>
+            <mat-form-field class="input-login" appearance="fill">
+                <mat-label>Contraseña</mat-label>
+                <input matInput type="password" formControlName="password">
+            </mat-form-field>
+            <div *ngIf="myFormLogin.get('password')?.errors && myFormLogin.get('password')?.dirty">
+                <p *ngIf="myFormLogin.get('password')?.hasError('required')">El campo es obligatorio</p>
+                <p *ngIf="myFormLogin.get('password')?.hasError('minlength')">Debe tener por lo menos 6 caracteres</p>
+                <p *ngIf="myFormLogin.get('password')?.hasError('maxlength')">Debe como máximo 10 caracteres</p>
+            </div>
+            <button mat-raised-button class="button-login" color="primary" type="submit" [disabled]="myFormLogin.invalid">Iniciar sesión</button>
+        </form>
+        </div>
+        </div>
+</div>

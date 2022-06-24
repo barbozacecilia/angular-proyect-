@@ -11,16 +11,11 @@ import{DetailComponent} from './Pages/detail/detail.component';
 import {HttpClientModule} from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MenuComponent } from './Components/menu/menu.component';
+import { ProductComponent } from './Components/product/product.component';
 
 import { ListModule } from './list/list.module';
+import { SharedModule } from './Components/shared/shared.module';
 
-//Angular Material
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatInputModule} from '@angular/material/input';
-import {MatButtonModule} from '@angular/material/button';
-import { ProductComponent } from './Components/product/product.component';
-import {MatSnackBarModule} from '@angular/material/snack-bar';
-import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 
 
@@ -42,11 +37,7 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     HttpClientModule,
     ListModule,
     BrowserAnimationsModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatButtonModule,
-    MatSnackBarModule,
-    MatProgressSpinnerModule,
+    SharedModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

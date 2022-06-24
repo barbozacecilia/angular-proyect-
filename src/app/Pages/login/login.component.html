@@ -6,7 +6,7 @@
         <div>
             <img src="./assets/img/user.png" width="30%">
         </div>
-        <form  [formGroup]="myFormLogin" (ngSubmit)="login()">
+        <form [formGroup]="myFormLogin" (ngSubmit)="login()">
             <mat-form-field class="input-login" appearance="fill">
                 <mat-label>Email</mat-label>
                 <input matInput type="email" formControlName="email">

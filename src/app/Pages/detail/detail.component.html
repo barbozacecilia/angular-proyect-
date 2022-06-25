@@ -1,9 +1,7 @@
 <p>Detalle</p>
-<div *ngIf="isLoading"> 
-    is Loading ... 
-</div>
-<div *ngIf="!isLoading && !isError">
- <h1>{{product?.title}}</h1>
- <p>{{product?.price | currency:'ARS ' }}</p>
- <button routerLink="/home">Regresar al inicio</button>
-</div>
+    <mat-spinner *ngIf="isLoading" diameter="50" class="spiner"></mat-spinner>
+    <div *ngIf="!isLoading && !isError">
+        <h1>{{product?.title}}</h1>
+        <p>{{product?.price | currency:'ARS ' }}</p>
+        <button routerLink="/home">Regresar al inicio</button>
+    </div>

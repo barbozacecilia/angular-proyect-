@@ -15,7 +15,7 @@ import { ProductComponent } from './Components/product/product.component';
 
 import { ListModule } from './list/list.module';
 import { SharedModule } from './Components/shared/shared.module';
-
+import { NotFoundComponent } from './Pages/not-found/not-found.component';
 
 
 
@@ -27,7 +27,8 @@ import { SharedModule } from './Components/shared/shared.module';
     SignupComponent,
     DetailComponent,
     MenuComponent,
-    ProductComponent
+    ProductComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,

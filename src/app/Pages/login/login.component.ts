@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-login',
@@ -13,7 +15,8 @@ myFormLogin:FormGroup;
 loading = false;
   constructor(
     private fb:FormBuilder,
-    private _snackBar: MatSnackBar
+    private _snackBar: MatSnackBar,
+    private router: Router,
   ) { 
     this.myFormLogin = this.fb.group({
       email:["", [Validators.required, Validators.email]],
@@ -53,7 +56,8 @@ loading = false;
     });
     setTimeout(()=>{
       this.loading = false;
-    }, 3000)
+      this.router.navigate(['home']);
+    }, 1500)
 
   }
 

@@ -5,4 +5,5 @@
 <div *ngIf="!isLoading && !isError">
  <h1>{{product?.title}}</h1>
  <p>{{product?.price | currency:'ARS ' }}</p>
+ <button routerLink="/home">Regresar al inicio</button>
 </div>

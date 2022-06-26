@@ -5,6 +5,9 @@ export interface Product{
     category_id?: string,
     price?: number,
     thumbnail?: string,
+    available_quantity: number,
+    sold_quantity: number,
+    condition: string,
 }
 
 export interface ResponseProduct{

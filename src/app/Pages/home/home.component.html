@@ -1,23 +1,50 @@
 <div class="body">
-    <p>Home</p>
     <mat-spinner *ngIf="isLoading" diameter="50" class="spiner"></mat-spinner>
 </div>
 <div class="body">
     <div *ngIf="!isLoading && !isError">
-        <div>
+        <mat-card class="card">
+            <mat-card-header class="card-header">
+                <mat-card-title>{{results?.title}}</mat-card-title>
+                <mat-card-subtitle>La foto astronómica del día {{results?.date}}</mat-card-subtitle>
+            </mat-card-header>
+            <div class="card-info">
+                <img class="image-apod" mat-card-image src={{results?.url}} alt="Imagen del día">
+                <mat-card-content>
+                    <p>
+                        {{results?.explanation}}
+                    </p>
+                </mat-card-content>
+            </div>
+        </mat-card>
+    </div>
+    <div *ngIf="!isLoading && !isError">
+        <mat-card class="title-img">
+            <mat-card-title>Los mejores telescopios</mat-card-title>
             <img src="./assets/img/img_telescope.png" width="10%">
-            <p>Astronomy Picture of the Day</p>
-            <h1>{{results?.title}}</h1>
-            <p class="picture">{{results?.date}}</p>
-            <img src={{results?.url}}/>
-            <p class="explanation">{{results?.explanation}}</p>
-        </div>
-        <h2>Los mejores telescopios</h2>
-        <div *ngFor="let product of products">
-            <p>{{product?.title | uppercase}}</p>
-            <p>{{product?.price | currency:'ARS ' }}</p>
-            <button routerLink="/telescope/{{product.id}}">ver detalle</button>
-        </div>
+        </mat-card>
+    
+                <mat-card>
+                    <div *ngFor="let product of products" class="example-card">
+                        <mat-card-title-group class="card-info-list">
+                            <mat-card-title>
+                                <p>{{product?.title}}</p>
+                            </mat-card-title>
+                            <mat-card-subtitle>
+                                <p>{{product?.price | currency:'ARS ' }}</p>
+                            </mat-card-subtitle>
+                            <div>
+                                <img mat-card-sm-image src={{product?.thumbnail}}>
+                                <mat-card-actions>
+                                    <button mat-button routerLink="/telescope/{{product.id}}">ver detalle</button>
+                                </mat-card-actions>
+                            </div>
+                        </mat-card-title-group>
+                    </div>
+                    <mat-card-content>
+                    </mat-card-content>
+                </mat-card>
+
     </div>
 </div>
 

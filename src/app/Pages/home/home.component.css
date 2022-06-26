@@ -21,3 +21,39 @@
 .spinner {
     margin: 0 auto;
 }
+
+.card {
+    width: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  .card-header{
+    margin: 25px;
+  }
+
+  .card-info{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+  }
+  
+ .image-apod{
+    max-width: 100%;
+    min-width: 75vh;
+    margin: 25px;
+ } 
+
+ .title-img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    margin: 25px;
+    padding: 10px;
+    background-color: #bebfc6d5;
+  }
+
+ .card-info-list{
+    display: flex;
+ }

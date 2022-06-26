@@ -1,0 +1,7 @@
+.spacer {
+    flex: 1 1 auto;
+  }
+  .body {
+    padding: 25px;
+    width: 100vh;
+  }

@@ -1,7 +1,17 @@
-.spacer {
-    flex: 1 1 auto;
-  }
-  .body {
-    padding: 25px;
-    width: 100vh;
-  }
+.footer-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 5vh;
+  min-width: 100vh;
+  height: 10%; 
+  width: 100%; 
+  color: aliceblue;
+  background-color: #7aaec4f4;
+}
+
+.text-footer{
+  color: #d6d8e5;
+  padding: 25px;
+}

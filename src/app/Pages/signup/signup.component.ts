@@ -33,7 +33,7 @@ export class SignupComponent implements OnInit {
     const password = this.myForm.value.password;
 
 
-    if (email == 'test@test.com' && password == '1234567') {
+    if (email !== '' && password !== ' ') {
       this.setLoading();
     } else {
       this.error();

@@ -1,8 +1,9 @@
-<div class="body">
+<div class="body-home">
     <mat-spinner *ngIf="isLoading" diameter="50" class="spiner"></mat-spinner>
 </div>
 <div class="body">
     <div *ngIf="!isLoading && !isError">
+        <h1 class="title">¡Bienvenido/a a todo telescopios!</h1>
         <mat-card class="card">
             <mat-card-header class="card-header">
                 <mat-card-title>{{results?.title}}</mat-card-title>

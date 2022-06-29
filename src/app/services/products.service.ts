@@ -22,7 +22,7 @@ export class ProductsService {
   getPicture(): Promise<Apod>{
     return lastValueFrom(this.httpClient.get<Apod>(environment.apiEndPointApod+"?api_key=8cxzRvH8CXbIOfw9yT89gzz2fVvxswtdbA6nChUf"))
   }
-  getById(id:any){
-    return lastValueFrom(this.httpClient.get((environment.apiEndPointMLA+"/items/")+id))
+  getById(id:any):Promise<Apod>{
+    return lastValueFrom(this.httpClient.get<Apod>((environment.apiEndPointMLA+"/items/")+id))
   }
 }

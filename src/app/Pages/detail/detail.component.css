@@ -1,9 +1,10 @@
-.body{
+.body-detail{
     display: flex;
     align-items: center;
     flex-direction: column;
     justify-content: center;
     height: 85vh;
+    background-color: #f5f5f5df;
 }
 
 .card {

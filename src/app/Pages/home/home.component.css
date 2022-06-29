@@ -1,11 +1,19 @@
-.body{
+.body-home{
     display: flex;
     align-items: center;
     flex-direction: column;
     justify-content: center;
-    background-color:f8f8f8;
+    background-color: #f5f5f5df;
 }
-
+.title{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: 25px;
+  padding: 10px;
+ font-weight: 500;
+ color: #3F51B5;
+}
 .picture{
     height: 10px;
 }
@@ -16,6 +24,7 @@
     flex-direction: column;
     width: 800px;
     padding: 25px;
+    background-color: #f5f5f5df;
 }
 
 .spinner {

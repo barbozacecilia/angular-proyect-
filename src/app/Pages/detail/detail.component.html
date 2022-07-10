@@ -8,6 +8,9 @@
                 <mat-card-subtitle>Cantidad disponible: {{product?.available_quantity}} </mat-card-subtitle>
             </mat-card-header>
             <img mat-card-md-image src={{product?.thumbnail}} alt="imagen del producto">
+            <mat-grid-list cols="2" rowHeight="2:1">
+                <img  mat-card-md-image *ngFor="let imagen of product?.pictures" src={{imagen.url}}>
+            </mat-grid-list>
             <mat-card-content>
                 <p> Categoría : {{product?.category_id}}</p>
                 <p> Código: {{product.id}}</p>
@@ -20,6 +23,5 @@
                 <button mat-button routerLink="/home">Comprar</button>
             </mat-card-actions>
         </mat-card>
-
     </div>
 </div>

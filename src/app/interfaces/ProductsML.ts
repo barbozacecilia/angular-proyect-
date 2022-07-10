@@ -8,6 +8,7 @@ export interface Product{
     available_quantity: number,
     sold_quantity: number,
     condition: string,
+    pictures?: string,
 }
 
 export interface ResponseProduct{

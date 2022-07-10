@@ -2,8 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { lastValueFrom, map, Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { Apod } from 'src/interfaces/Apod';
-import { Product, ResponseProduct } from 'src/interfaces/ProductsML';
+import { Apod } from 'src/app/interfaces/Apod';
+import { Product, ResponseProduct } from 'src/app/interfaces/ProductsML';
 
 @Injectable({
   providedIn: 'root'

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductsService } from '../../services/products.service';
-import {Product} from 'src/interfaces/ProductsML';
-import { Apod } from 'src/interfaces/Apod';
+import {Product} from 'src/app/interfaces/ProductsML';
+import { Apod } from 'src/app/interfaces/Apod';
 
 @Component({
   selector: 'app-home',

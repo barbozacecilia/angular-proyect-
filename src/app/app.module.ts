@@ -13,7 +13,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MenuComponent } from './Components/menu/menu.component';
 import { ProductComponent } from './Components/product/product.component';
 
-import { ListModule } from './list/list.module';
 import { SharedModule } from './Components/shared/shared.module';
 import { NotFoundComponent } from './Pages/not-found/not-found.component';
 import { FooterComponent } from './Components/footer/footer.component';
@@ -38,7 +37,6 @@ import { FooterComponent } from './Components/footer/footer.component';
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
-    ListModule,
     BrowserAnimationsModule,
     SharedModule,
   ],
